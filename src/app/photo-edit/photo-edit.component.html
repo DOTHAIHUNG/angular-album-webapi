@@ -1,0 +1,21 @@
+<form [formGroup]="photoForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Title
+      <input type="text" formControlName="title">
+    </label>
+  </div>
+  <div>
+    <label>
+      Url
+      <input type="text" formControlName="url">
+    </label>
+  </div>
+  <div>
+    <label>
+      ThumbnailUrl
+      <input type="text" formControlName="thumbnailUrl">
+    </label>
+  </div>
+  <button type="submit">Update</button>
+</form>

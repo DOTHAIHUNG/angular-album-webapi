@@ -1,0 +1,36 @@
+<form [formGroup]="inputControl" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Title
+      <input type="text" formControlName="title">
+    </label>
+  </div>
+  <div>
+    <label>
+      Url
+      <input type="text" formControlName="url">
+    </label>
+  </div>
+  <div>
+    <label>
+      ThumbnailUrl
+      <input type="text" formControlName="thumbnailUrl">
+    </label>
+  </div>
+  <button type="submit">Create</button>
+</form>
+
+<ul>
+  <li *ngFor="let photo of photos; index as i">
+    <h3>
+      <a [routerLink]="['/photo', photo.id]">
+        Photo Title: {{photo.title}}
+      </a>
+    </h3>
+    <img [src]="photo.url" alt="photo.title"/>
+    <div>
+      <button [routerLink]="['/photo', photo.id, 'edit']">Edit</button>
+      <button (click)="deletePhoto(i)">Delete</button>
+    </div>
+  </li>
+</ul>
